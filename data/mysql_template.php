@@ -1,6 +1,6 @@
 <?php
 // Get conf data
-include_once '../dbconf/dbconf.php';
+include_once 'dbconf/dbconf.php';
 
 // Create connection
 $conn = new mysqli($host, $user, $pwd, $dbname);
