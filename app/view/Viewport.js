@@ -54,6 +54,21 @@ Ext.define('PBI.view.Viewport',{
 			}).show();
 		};
 
+		// Center panel
+		var centerPanel = Ext.create('Ext.panel.Panel', {
+			layout: 'fit',
+			title: 'PBI List',
+			items: [
+			{
+				region: 'north',
+				xtype: 'pbitoolbar'
+			},
+			{
+				region: 'center',
+				xtype: 'panel'
+			}]
+		});
+
 		this.items = {
 		layout: 'border',
 		border: false,
@@ -85,7 +100,9 @@ Ext.define('PBI.view.Viewport',{
 		{
 			region: 'center',
 			id: 'mainApplication',
-			xtype: 'panel'
+			items: [
+				centerPanel
+			]
 		}]
 	};
 	this.callParent(arguments);
