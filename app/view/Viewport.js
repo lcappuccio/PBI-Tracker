@@ -23,13 +23,13 @@ Ext.define('PBI.view.Viewport',{
 				listeners: {
 					destroy: {
 						fn: function() {
-							Ext.getCmp('mainApplication').setVisible(true);
+							Ext.getCmp('mainApplication').setVisible(true);				
 							Ext.getCmp('logouttb').setVisible(true);
 						}
 					},
 					show: {
 						fn: function() {
-							Ext.getCmp('mainApplication').setVisible(false);							
+							Ext.getCmp('mainApplication').setVisible(false);				
 							Ext.getCmp('logouttb').setVisible(false);
 						}
 					}
