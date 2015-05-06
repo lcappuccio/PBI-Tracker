@@ -86,6 +86,7 @@ Ext.define('PBI.view.Viewport',{
 					id: 'logoutBtn',
 					handler: function() {
 						showLogin();
+						Ext.getCmp('userlist').isValid();
 					}
 				}]
 			}],
