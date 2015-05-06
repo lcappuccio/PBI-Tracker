@@ -25,11 +25,13 @@ Ext.define('PBI.view.Viewport',{
 					destroy: {
 						fn: function() {
 							Ext.getCmp('mainApplication').setVisible(true);
+							Ext.getCmp('pbitoolbar').setVisible(true);
 						}
 					},
 					show: {
 						fn: function() {
-							Ext.getCmp('mainApplication').setVisible(false);
+							Ext.getCmp('mainApplication').setVisible(false);							
+							Ext.getCmp('pbitoolbar').setVisible(false);
 						}
 					}
 				},
