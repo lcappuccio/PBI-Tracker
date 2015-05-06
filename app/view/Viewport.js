@@ -15,7 +15,7 @@ Ext.define('PBI.view.Viewport',{
 				title: 'Login',
 				id: 'loginWindow',
 				height: 150,
-				width: 258,
+				width: 280,
 				resizable: false,
 				closable: false,
 				bodyPadding: '5px 5px 0',
@@ -32,7 +32,30 @@ Ext.define('PBI.view.Viewport',{
 							Ext.getCmp('mainApplication').setVisible(false);
 						}
 					}
-				}
+				},
+				buttons: [
+				{
+					iconCls: 'confirm',
+					width: 80,
+					text: 'Login',
+					formBind: true,
+				}],
+				items: [
+				{
+					xtype: 'textfield',
+					labelWidth: 80,
+					allowBlank: false,
+					fieldLabel: 'Username',
+					id: 'loginUsername'
+				},
+				{
+					xtype: 'textfield',
+					labelWidth: 80,
+					allowBlank: false,
+					inputType:'password',
+					fieldLabel: 'Password',
+					id: 'loginPasswd'
+				}]
 			}).show();
 		};
 
@@ -58,5 +81,7 @@ Ext.define('PBI.view.Viewport',{
 	};
 	this.callParent(arguments);
 	showLogin();
+	Ext.getCmp('loginUsername').isValid();
+	Ext.getCmp('loginPasswd').isValid();
 	}
 });
