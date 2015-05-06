@@ -1,7 +1,7 @@
 Ext.define('PBI.view.Viewport',{
 	extend: 'Ext.container.Viewport',
 	requires: [
-		'PBI.view.PBIToolbar',
+		'PBI.view.PbiToolbar',
 		'PBI.view.UserList'
 	/*
 	add all views here
@@ -23,13 +23,13 @@ Ext.define('PBI.view.Viewport',{
 				listeners: {
 					destroy: {
 						fn: function() {
-							Ext.getCmp('mainApplication').setVisible(true);
+							Ext.getCmp('mainApplication').setVisible(true);				
 							Ext.getCmp('logouttb').setVisible(true);
 						}
 					},
 					show: {
 						fn: function() {
-							Ext.getCmp('mainApplication').setVisible(false);							
+							Ext.getCmp('mainApplication').setVisible(false);				
 							Ext.getCmp('logouttb').setVisible(false);
 						}
 					}
@@ -86,6 +86,7 @@ Ext.define('PBI.view.Viewport',{
 					id: 'logoutBtn',
 					handler: function() {
 						showLogin();
+						Ext.getCmp('userlist').isValid();
 					}
 				}]
 			}],

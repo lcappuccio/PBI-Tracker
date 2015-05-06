@@ -1,4 +1,4 @@
-Ext.define('PBI.view.PBIToolbar' ,{
+Ext.define('PBI.view.PbiToolbar' ,{
 	extend: 'Ext.toolbar.Toolbar',
 	alias: 'widget.pbitoolbar',
 	id: 'pbitoolbar',
@@ -64,7 +64,7 @@ Ext.define('PBI.view.PBIToolbar' ,{
 			iconCls: 'create',
 			tooltip: '<b>Quick Tip</b><br/>Create new PBI',
 			text: 'Create',
-			id: 'reqBtn'
+			id: 'createBtn'
 		},
 		{ xtype: 'tbseparator' },
 		{
