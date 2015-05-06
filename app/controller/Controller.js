@@ -3,7 +3,7 @@ Ext.define('PBI.controller.Controller', {
 	stores: [
 	],
 	views: [
-		'PBI.view.PBIToolbar'
+		'PBI.view.PbiToolbar'
 	],
 
 	init: function() {

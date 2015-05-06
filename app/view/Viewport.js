@@ -1,7 +1,7 @@
 Ext.define('PBI.view.Viewport',{
 	extend: 'Ext.container.Viewport',
 	requires: [
-		'PBI.view.PBIToolbar',
+		'PBI.view.PbiToolbar',
 		'PBI.view.UserList'
 	/*
 	add all views here
