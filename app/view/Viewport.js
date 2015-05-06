@@ -24,13 +24,13 @@ Ext.define('PBI.view.Viewport',{
 					destroy: {
 						fn: function() {
 							Ext.getCmp('mainApplication').setVisible(true);
-							Ext.getCmp('pbitoolbar').setVisible(true);
+							Ext.getCmp('logouttb').setVisible(true);
 						}
 					},
 					show: {
 						fn: function() {
 							Ext.getCmp('mainApplication').setVisible(false);							
-							Ext.getCmp('pbitoolbar').setVisible(false);
+							Ext.getCmp('logouttb').setVisible(false);
 						}
 					}
 				},
@@ -56,6 +56,24 @@ Ext.define('PBI.view.Viewport',{
 
 		this.items = {
 		layout: 'border',
+		border: false,
+		dockedItems: [
+			{
+				xtype: 'toolbar',
+				id: 'logouttb',
+				dock: 'bottom',
+				border: false,
+				items: [
+				'->', // Fill
+				{
+					text: 'Logout',
+					iconCls: 'login',
+					id: 'logoutBtn',
+					handler: function() {
+						showLogin();
+					}
+				}]
+			}],
 		items: [
 		{
 			region: 'north',
@@ -68,10 +86,6 @@ Ext.define('PBI.view.Viewport',{
 			region: 'center',
 			id: 'mainApplication',
 			xtype: 'panel'
-		},
-		{
-			region: 'south',
-			xtype: 'pbitoolbar'
 		}]
 	};
 	this.callParent(arguments);
