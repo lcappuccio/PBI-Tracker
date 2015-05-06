@@ -62,23 +62,15 @@ Ext.define('PBI.view.PBIToolbar' ,{
 		{
 			xtype: 'button', // default for Toolbars
 			iconCls: 'create',
-			tooltip: '<b>Quick Tip</b><br/>Create promotion request',
+			tooltip: '<b>Quick Tip</b><br/>Create new PBI',
 			text: 'Create',
 			id: 'reqBtn'
 		},
 		{ xtype: 'tbseparator' },
 		{
 			xtype: 'button', // default for Toolbars
-			iconCls: 'view',
-			tooltip: '<b>Quick Tip</b><br/>View promotion request',
-			text: 'View',
-			id: 'viewBtn'
-		},
-		{ xtype: 'tbseparator' },
-		{
-			xtype: 'button', // default for Toolbars
 			iconCls: 'edit',
-			tooltip: '<b>Quick Tip</b><br/>Modify promotion request',
+			tooltip: '<b>Quick Tip</b><br/>Modify PBI',
 			text: 'Edit',
 			id: 'editBtn'
 		},
@@ -86,7 +78,7 @@ Ext.define('PBI.view.PBIToolbar' ,{
 		{
 			xtype: 'button', // default for Toolbars
 			iconCls: 'edit_history',
-			tooltip: '<b>Quick Tip</b><br/>View edit history',
+			tooltip: '<b>Quick Tip</b><br/>View PBI history',
 			text: 'History',
 			id: 'histBtn'
 		},
