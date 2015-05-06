@@ -10,6 +10,32 @@ Ext.define('PBI.view.Viewport',{
 
 	initComponent: function() {
 
+		function showLogin() {
+			Ext.create('Ext.window.Window', {
+				title: 'Login',
+				id: 'loginWindow',
+				height: 150,
+				width: 258,
+				resizable: false,
+				closable: false,
+				bodyPadding: '5px 5px 0',
+				buttonAlign: 'center',
+				iconCls: 'login',
+				listeners: {
+					destroy: {
+						fn: function() {
+							Ext.getCmp('mainApplication').setVisible(true);
+						}
+					},
+					show: {
+						fn: function() {
+							Ext.getCmp('mainApplication').setVisible(false);
+						}
+					}
+				}
+			}).show();
+		};
+
 		this.items = {
 		layout: 'border',
 		items: [
@@ -22,6 +48,7 @@ Ext.define('PBI.view.Viewport',{
 		},
 		{
 			region: 'center',
+			id: 'mainApplication',
 			xtype: 'panel'
 		},
 		{
@@ -30,5 +57,6 @@ Ext.define('PBI.view.Viewport',{
 		}]
 	};
 	this.callParent(arguments);
+	showLogin();
 	}
 });
