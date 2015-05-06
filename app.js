@@ -4,8 +4,10 @@
     autoCreateViewport : true,
 
     models: [
+        'User'
     ],
     stores: [
+        'Users'
     ],
     controllers: [
         'Controller'

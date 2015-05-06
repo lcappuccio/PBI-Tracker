@@ -1,7 +1,8 @@
 Ext.define('PBI.view.Viewport',{
 	extend: 'Ext.container.Viewport',
 	requires: [
-		'PBI.view.PBIToolbar'
+		'PBI.view.PBIToolbar',
+		'PBI.view.UserList'
 	/*
 	add all views here
 	*/
@@ -9,6 +10,49 @@ Ext.define('PBI.view.Viewport',{
 	layout:'fit',
 
 	initComponent: function() {
+
+		function showLogin() {
+			Ext.create('Ext.window.Window', {
+				title: 'Login',
+				id: 'loginWindow',
+				resizable: false,
+				closable: false,
+				bodyPadding: '5px 5px 0',
+				buttonAlign: 'center',
+				iconCls: 'login',
+				listeners: {
+					destroy: {
+						fn: function() {
+							Ext.getCmp('mainApplication').setVisible(true);
+							Ext.getCmp('pbitoolbar').setVisible(true);
+						}
+					},
+					show: {
+						fn: function() {
+							Ext.getCmp('mainApplication').setVisible(false);							
+							Ext.getCmp('pbitoolbar').setVisible(false);
+						}
+					}
+				},
+				buttons: [
+				{
+					iconCls: 'confirm',
+					text: 'Login',
+					formBind: true,
+					handler: function() {
+						if (Ext.getCmp('userlist').isValid()) {
+							Ext.getCmp('loginWindow').destroy();
+						}
+					}
+				}],
+				items: [
+				{
+					xtype: 'userlist',
+					allowBlank: false,
+					id: 'userlist'
+				}]
+			}).show();
+		};
 
 		this.items = {
 		layout: 'border',
@@ -22,6 +66,7 @@ Ext.define('PBI.view.Viewport',{
 		},
 		{
 			region: 'center',
+			id: 'mainApplication',
 			xtype: 'panel'
 		},
 		{
@@ -30,5 +75,7 @@ Ext.define('PBI.view.Viewport',{
 		}]
 	};
 	this.callParent(arguments);
+	showLogin();
+	Ext.getCmp('userlist').isValid();
 	}
 });
