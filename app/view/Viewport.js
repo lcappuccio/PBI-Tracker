@@ -39,6 +39,11 @@ Ext.define('PBI.view.Viewport',{
 					iconCls: 'confirm',
 					text: 'Login',
 					formBind: true,
+					handler: function() {
+						if (Ext.getCmp('userlist').isValid()) {
+							Ext.getCmp('loginWindow').destroy();
+						}
+					}
 				}],
 				items: [
 				{
