@@ -1,0 +1,110 @@
+/*
+	Actions
+*/
+
+.view {
+    background-image:url(../images/icons/view.png) !important;
+}
+
+.create {
+    background-image:url(../images/icons/create.png) !important;
+}
+
+.edit {
+    background-image:url(../images/icons/edit.png) !important;
+}
+
+.edit_history {
+    background-image:url(../images/icons/edit_history.png) !important;
+}
+
+.print {
+    background-image:url(../images/icons/print.png) !important;
+}
+
+.reset {
+    background-image:url(../images/icons/reset.png) !important;
+}
+
+.run {
+    background-image:url(../images/icons/run.png) !important;
+}
+
+.save {
+    background-image:url(../images/icons/save.png) !important;
+}
+
+.help {
+    background-image:url(../images/icons/help.png) !important;
+}
+
+.delete {
+    background-image:url(../images/icons/delete.png) !important;
+}
+
+.action {
+    background-image:url(../images/icons/action.png) !important;
+}
+
+.confirm {
+    background-image:url(../images/icons/confirm.png) !important;
+}
+
+.refresh {
+    background-image:url(../images/icons/refresh.png) !important;
+}
+
+.login {
+    background-image:url(../images/icons/login.png) !important;
+}
+
+.store {
+    background-image:url(../images/icons/store.png) !important;
+}
+
+.user {
+    background-image:url(../images/icons/user.png) !important;
+}
+
+.download {
+    background-image:url(../images/icons/download.png) !important;
+}
+
+/*
+	Misc
+*/
+.calendar {
+    background-image:url(../images/icons/calendar.png) !important;
+}
+
+.arrow_left {
+    background-image:url(../images/icons/arrow_left.png) !important;
+}
+
+.arrow_right {
+    background-image:url(../images/icons/arrow_right.png) !important;
+}
+
+.error {
+    background-image:url(../images/icons/error.png) !important;
+}
+
+/*
+	Tab icons have to be resized to 12x12 due to extjs limitations
+*/
+
+.tabhelp {
+    background-image:url(../images/tabs/help.png) !important;
+}
+
+.tabview {
+    background-image:url(../images/tabs/view.png) !important;
+}
+
+.tabaction {
+    background-image:url(../images/tabs/create.png) !important;
+}
+
+.tabstore {
+    background-image:url(../images/tabs/store.png) !important;
+}

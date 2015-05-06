@@ -1,0 +1,30 @@
+.mainTitle {
+		position:relative;
+    font-size: 16px;
+    color: #DDD;
+    font-family: Tahoma;
+    float: left;
+    width: 600;  
+    top: 3px;
+}
+.mainLoginDiv {
+		position:absolute;
+		right:0px;
+		width:70px;
+		top: 3px;
+}
+.mainLogOutDiv {
+		position:absolute;
+		right:0px;
+		width:100px;
+		top: -5px;
+}
+#mainUserName {
+	position:absolute;	
+  width: 200;  
+  top: 6px;
+  right:160px;
+  font-family: Tahoma;
+  font-size: 12px;
+  color: #FFF;
+}
