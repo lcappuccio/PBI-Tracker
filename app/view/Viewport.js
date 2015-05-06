@@ -1,7 +1,8 @@
 Ext.define('PBI.view.Viewport',{
 	extend: 'Ext.container.Viewport',
 	requires: [
-		'PBI.view.PBIToolbar'
+		'PBI.view.PBIToolbar',
+		'PBI.view.UserList'
 	/*
 	add all views here
 	*/
@@ -14,8 +15,6 @@ Ext.define('PBI.view.Viewport',{
 			Ext.create('Ext.window.Window', {
 				title: 'Login',
 				id: 'loginWindow',
-				height: 150,
-				width: 280,
 				resizable: false,
 				closable: false,
 				bodyPadding: '5px 5px 0',
@@ -38,25 +37,14 @@ Ext.define('PBI.view.Viewport',{
 				buttons: [
 				{
 					iconCls: 'confirm',
-					width: 80,
 					text: 'Login',
 					formBind: true,
 				}],
 				items: [
 				{
-					xtype: 'textfield',
-					labelWidth: 80,
+					xtype: 'userlist',
 					allowBlank: false,
-					fieldLabel: 'Username',
-					id: 'loginUsername'
-				},
-				{
-					xtype: 'textfield',
-					labelWidth: 80,
-					allowBlank: false,
-					inputType:'password',
-					fieldLabel: 'Password',
-					id: 'loginPasswd'
+					id: 'userlist'
 				}]
 			}).show();
 		};
@@ -83,7 +71,6 @@ Ext.define('PBI.view.Viewport',{
 	};
 	this.callParent(arguments);
 	showLogin();
-	Ext.getCmp('loginUsername').isValid();
-	Ext.getCmp('loginPasswd').isValid();
+	Ext.getCmp('userlist').isValid();
 	}
 });
