@@ -4,10 +4,12 @@
     autoCreateViewport : true,
 
     models: [
-        'User'
+        'User',
+        'Pbi'
     ],
     stores: [
-        'Users'
+        'Users',
+        'Pbis'
     ],
     controllers: [
         'Controller'

@@ -1,10 +1,11 @@
 Ext.define('PBI.controller.Controller', {
 	extend: 'Ext.app.Controller',
 	stores: [
+		'Pbis'
 	],
 	views: [
-		'PBI.view.PbiToolbar',
-		'PBI.view.CreatePbi'
+		'PbiToolbar',
+		'CreatePbi'
 	],
 
 	init: function() {
