@@ -24,13 +24,13 @@ Ext.define('PBI.view.Viewport',{
 					destroy: {
 						fn: function() {
 							Ext.getCmp('mainApplication').setVisible(true);				
-							Ext.getCmp('logouttb').setVisible(true);
+							Ext.getCmp('logoutToolbar').setVisible(true);
 						}
 					},
 					show: {
 						fn: function() {
 							Ext.getCmp('mainApplication').setVisible(false);				
-							Ext.getCmp('logouttb').setVisible(false);
+							Ext.getCmp('logoutToolbar').setVisible(false);
 						}
 					}
 				},
@@ -40,16 +40,16 @@ Ext.define('PBI.view.Viewport',{
 					text: 'Login',
 					formBind: true,
 					handler: function() {
-						if (Ext.getCmp('userlist').isValid()) {
+						if (Ext.getCmp('userList').isValid()) {
 							Ext.getCmp('loginWindow').destroy();
 						}
 					}
 				}],
 				items: [
 				{
-					xtype: 'userlist',
+					xtype: 'userList',
 					allowBlank: false,
-					id: 'userlist'
+					id: 'userList'
 				}]
 			}).show();
 		};
@@ -61,7 +61,7 @@ Ext.define('PBI.view.Viewport',{
 			items: [
 			{
 				region: 'north',
-				xtype: 'pbitoolbar'
+				xtype: 'pbiToolbar'
 			},
 			{
 				region: 'center',
@@ -75,7 +75,7 @@ Ext.define('PBI.view.Viewport',{
 		dockedItems: [
 			{
 				xtype: 'toolbar',
-				id: 'logouttb',
+				id: 'logoutToolbar',
 				dock: 'bottom',
 				border: false,
 				items: [
@@ -86,7 +86,7 @@ Ext.define('PBI.view.Viewport',{
 					id: 'logoutBtn',
 					handler: function() {
 						showLogin();
-						Ext.getCmp('userlist').isValid();
+						Ext.getCmp('userList').isValid();
 					}
 				}]
 			}],
@@ -108,6 +108,6 @@ Ext.define('PBI.view.Viewport',{
 	};
 	this.callParent(arguments);
 	showLogin();
-	Ext.getCmp('userlist').isValid();
+	Ext.getCmp('userList').isValid();
 	}
 });
