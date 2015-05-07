@@ -1,7 +1,7 @@
 Ext.define('PBI.view.UserList' ,{
 	extend: 'Ext.form.ComboBox',
-	alias : 'widget.userlist',
-	id: 'userlist',
+	alias : 'widget.userList',
+	id: 'userList',
 	editable: false,
 	fieldLabel: 'User',
 	queryMode: 'local',

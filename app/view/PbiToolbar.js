@@ -1,26 +1,26 @@
 Ext.define('PBI.view.PbiToolbar' ,{
 	extend: 'Ext.toolbar.Toolbar',
-	alias: 'widget.pbitoolbar',
-	id: 'pbitoolbar',
+	alias: 'widget.pbiToolbar',
+	id: 'pbiToolbar',
 
 	initComponent: function() {
 		
 		var months = Ext.create('Ext.data.Store', {
-	    fields: ['monthnum','monthdesc'],
+	    fields: ['monthNum','monthDesc'],
 	    data : [
-	    		{"monthnum":"0","monthdesc":"ALL"},
-	    		{"monthnum":"1","monthdesc":"1 - January"},
-	    		{"monthnum":"2","monthdesc":"2 - February"},
-	    		{"monthnum":"3","monthdesc":"3 - March"},
-	    		{"monthnum":"4","monthdesc":"4 - April"},
-	    		{"monthnum":"5","monthdesc":"5 - May"},
-	    		{"monthnum":"6","monthdesc":"6 - June"},
-	    		{"monthnum":"7","monthdesc":"7 - July"},
-	    		{"monthnum":"8","monthdesc":"8 - August"},
-	    		{"monthnum":"9","monthdesc":"9 - September"},
-	    		{"monthnum":"10","monthdesc":"10 - October"},
-	    		{"monthnum":"11","monthdesc":"11 - November"},
-	    		{"monthnum":"12","monthdesc":"12 - December"},
+	    		{"monthNum":"0","monthDesc":"ALL"},
+	    		{"monthNum":"1","monthDesc":"1 - January"},
+	    		{"monthNum":"2","monthDesc":"2 - February"},
+	    		{"monthNum":"3","monthDesc":"3 - March"},
+	    		{"monthNum":"4","monthDesc":"4 - April"},
+	    		{"monthNum":"5","monthDesc":"5 - May"},
+	    		{"monthNum":"6","monthDesc":"6 - June"},
+	    		{"monthNum":"7","monthDesc":"7 - July"},
+	    		{"monthNum":"8","monthDesc":"8 - August"},
+	    		{"monthNum":"9","monthDesc":"9 - September"},
+	    		{"monthNum":"10","monthDesc":"10 - October"},
+	    		{"monthNum":"11","monthDesc":"11 - November"},
+	    		{"monthNum":"12","monthDesc":"12 - December"},
 	    ]
 		});
 		
@@ -32,8 +32,8 @@ Ext.define('PBI.view.PbiToolbar' ,{
 		    labelWidth: 50,
 		    id: 'monthCombo',
 		    queryMode: 'local',
-		    displayField: 'monthdesc',
-		    valueField: 'monthnum',
+		    displayField: 'monthDesc',
+		    valueField: 'monthNum',
 		    value: '0'
 		});
 		
