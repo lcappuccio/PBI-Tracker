@@ -12,13 +12,9 @@ if (!$conn) {
 	printf("\n%".($e['offset']+1)."s", "^");
 	print  "\n</pre>\n";
 }
-// Define query
-//$query = 	'select reascdid,reascddsc from reasoncodes
-//where reascdid > 3 and reascdid in (53,58,103,104,105,106,107,108) group by reascdid,reascddsc union all 
-//select 1,\'Head Quarter Promotion\' from dual order by 2 asc';            
 
-$query = 
-'select stuff from table order by whatever asc';
+// Define query
+$query = 'select stuff from table order by whatever asc';
 
 // Create statement
 $stmt = oci_parse($conn, $query);

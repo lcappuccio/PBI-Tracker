@@ -1,7 +1,7 @@
 Ext.define('PBI.view.CreatePbi', {
 	extend: 'Ext.window.Window',
-	alias: 'widget.createpbi',
-	id: 'createpbi',
+	alias: 'widget.createPbi',
+	id: 'createPbi',
 	title: 'Create new PBI',
 	autoScroll:true,
 	resizable: false,
@@ -9,7 +9,7 @@ Ext.define('PBI.view.CreatePbi', {
 	dockedItems: {
 		xtype: 'toolbar',
 		dock: 'bottom',
-		id: 'createpbitb',
+		id: 'createPbiToolbar',
 		items: [
 		'->', // Fill
 		{

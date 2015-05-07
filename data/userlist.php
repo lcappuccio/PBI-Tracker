@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "select USER_ID, USER_NAME, USER_ACTIVE from PBI_USER";
+$sql = "select user_id, user_name, user_active from pbi_user";
 $result = $conn->query($sql);
 
 // Print JSON
