@@ -5,8 +5,8 @@ Ext.define('PBI.view.UserList' ,{
 	editable: false,
 	fieldLabel: 'User',
 	queryMode: 'local',
-	displayField: 'USER_NAME',
-	valueField: 'USER_ID',
+	displayField: 'user_name',
+	valueField: 'user_id',
 	store: 'Users',
 
 	initComponent: function() {
