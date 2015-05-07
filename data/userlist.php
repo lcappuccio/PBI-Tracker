@@ -19,7 +19,5 @@ while($r = mysqli_fetch_assoc($result)) {
 }
 print json_encode($rows);
 
-error_log("size of ".sizeof($rows));
-
 mysqli_close($conn);
 ?>
