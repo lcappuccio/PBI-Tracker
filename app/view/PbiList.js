@@ -44,12 +44,12 @@ Ext.define('PBI.view.PbiList' ,{
 			{header: 'Deployed', dataIndex: 'pbi_deployed', width: 100}
 		];		
 		this.callParent(arguments);
-		this.getStore().sort('ID', 'Description');
+		this.getStore().sort('pbi_id', 'DESC');
 	},
 	
 	reloadAll: function() {
 		this.getStore().load();
-		this.getStore().sort('ID', 'Description');
+		this.getStore().sort('pbi_id', 'DESC');
 	},
 	
 	reloadByFilter: function(comp,month,year,salestype) {
@@ -62,6 +62,6 @@ Ext.define('PBI.view.PbiList' ,{
 				p_salestype: salestype
 			}
 		});
-		myStore.sort('ID', 'Description');
+		myStore.sort('pbi_id', 'DESC');
 	}
 });
