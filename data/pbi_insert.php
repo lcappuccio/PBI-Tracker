@@ -11,7 +11,12 @@ if ($conn->connect_error) {
 
 $stmt = $mysqli->prepare("insert into pbi_list (pbi_id,pbi_descr) values (?,?)");
 $stmt->bind_param('is', $pbi_id, $pbi_descr);
-$stmt->execute();
+
+if ($stmt->execute()) {
+    echo '{"success":"true"}';
+} else {
+	echo '{"success":"false"}';
+}
 
 mysqli_close($conn);
 ?>
