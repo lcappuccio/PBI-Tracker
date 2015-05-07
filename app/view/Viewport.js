@@ -2,6 +2,7 @@ Ext.define('PBI.view.Viewport',{
 	extend: 'Ext.container.Viewport',
 	requires: [
 		'PBI.view.PbiToolbar',
+		'PBI.view.PbiList',
 		'PBI.view.UserList'
 	/*
 	add all views here
@@ -56,16 +57,13 @@ Ext.define('PBI.view.Viewport',{
 
 		// Center panel
 		var centerPanel = Ext.create('Ext.panel.Panel', {
-			layout: 'fit',
-			title: 'PBI List',
+			header: false,
 			items: [
 			{
-				region: 'north',
 				xtype: 'pbiToolbar'
 			},
 			{
-				region: 'center',
-				xtype: 'panel'
+				xtype: 'pbiList'
 			}]
 		});
 
