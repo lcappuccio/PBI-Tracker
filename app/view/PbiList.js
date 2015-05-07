@@ -1,6 +1,6 @@
 function showToolTip(value, metadata) {
 	metadata.tdAttr = 'data-qtip="' + value + '"';
-	return value.substring(0,23) + '...';
+	return value.substring(0,50) + '...';
 };
 
 function showDate(value, metadata) {
@@ -35,7 +35,7 @@ Ext.define('PBI.view.PbiList' ,{
 	initComponent: function() {
 		this.columns = [
 			{header: 'ID',  dataIndex: 'pbi_id', width: 100, resizable: false},
-			{header: 'Description', dataIndex: 'pbi_descr', flex: 1, renderer: showToolTip},
+			{header: 'Description', dataIndex: 'pbi_descr', flex: 1},
 			//{header: 'Documentation', dataIndex: 'pbi_done_doc', width: 100, renderer: showTimestamp},
 			{header: 'Documentation', dataIndex: 'pbi_done_documentation', width: 120, renderer: showIcon},
 			{header: 'Merged', dataIndex: 'pbi_done_merge', width: 100, renderer: showIcon},

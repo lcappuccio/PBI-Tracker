@@ -30,7 +30,7 @@ Ext.define('PBI.view.CreatePbi', {
 		fieldLabel: 'PBI Id',
 		id: 'pbiId',
 		allowBlank: false,
-		regex: /^[1-9]*$/
+		regex: /^[0-9]*$/
 	},
 	{
 		xtype: 'textfield',
