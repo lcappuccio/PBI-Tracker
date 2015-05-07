@@ -14,12 +14,12 @@ function showTimestamp(value, metadata) {
 };
 
 function showIcon(value, metadata) {
-	tableImg = '<center><img src="images/request_states/na.png"></centerZ';
-	if (value == 'APP') {
-		tableImg =  '<center><img src="images/request_states/app.png"></center>';
+	tableImg = '<center><img src="images/icons/na.png"></center>';
+	if (value == null || value == 0) {
+		tableImg =  '<center><img src="images/icons/reset.png"></center>';
 	}
-	if (value == 'REJ') {
-		tableImg =  '<center><img src="images/request_states/rej.png"></center>';
+	if (value >= 1) {
+		tableImg =  '<center><img src="images/icons/confirm.png"></center>';
 	}
 	return tableImg;
 };
@@ -37,11 +37,11 @@ Ext.define('PBI.view.PbiList' ,{
 			{header: 'ID',  dataIndex: 'pbi_id', width: 100, resizable: false},
 			{header: 'Description', dataIndex: 'pbi_descr', flex: 1, renderer: showToolTip},
 			//{header: 'Documentation', dataIndex: 'pbi_done_doc', width: 100, renderer: showTimestamp},
-			{header: 'Documentation', dataIndex: 'pbi_done_documentation', width: 120},
-			{header: 'Merged', dataIndex: 'pbi_done_merge', width: 100},
-			{header: 'PO Validated', dataIndex: 'pbi_done_validation_po', width: 100},
-			{header: 'Deployable', dataIndex: 'pbi_deployable', width: 100},
-			{header: 'Deployed', dataIndex: 'pbi_deployed', width: 100}
+			{header: 'Documentation', dataIndex: 'pbi_done_documentation', width: 120, renderer: showIcon},
+			{header: 'Merged', dataIndex: 'pbi_done_merge', width: 100, renderer: showIcon},
+			{header: 'PO Validated', dataIndex: 'pbi_done_validation_po', width: 100, renderer: showIcon},
+			{header: 'Deployable', dataIndex: 'pbi_deployable', width: 100, renderer: showIcon},
+			{header: 'Deployed', dataIndex: 'pbi_deployed', width: 100, renderer: showIcon}
 		];		
 		this.callParent(arguments);
 		this.getStore().sort('pbi_id', 'DESC');
