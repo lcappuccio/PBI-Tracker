@@ -31,6 +31,12 @@ Ext.define('PBI.controller.Controller', {
 			},
 			'pbiList': {
 				rowdblclick: this.editPbi
+			},
+			'editPbi > toolbar[id="editPbiToolbar"] > button[id="confirmEditBtn"]': {
+				click: this.debugConsole
+			},
+			'editPbi > toolbar[id="editPbiToolbar"] > button[id="resetEditBtn"]': {
+				click: this.debugConsole
 			}
 		});
 	},
