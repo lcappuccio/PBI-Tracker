@@ -23,7 +23,7 @@ Ext.define('PBI.controller.Controller', {
 				click: this.createPbi
 			},
 			'pbiToolbar > button[id="editBtn"]': {
-				click: this.debugConsole
+				click: this.editPbi
 			},
 			'pbiToolbar > button[id="histBtn"]': {
 				click: this.debugConsole
