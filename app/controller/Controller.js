@@ -87,8 +87,13 @@ Ext.define('PBI.controller.Controller', {
 		   var row = pbiGrid.getSelectionModel().getSelection()[0];
 		   var pbiId = row.get('pbi_id');
 		   var pbiDescr = row.get('pbi_descr');
+		   var pbiDocumentation = row.get('pbi_done_documentation');
+		   var pbiDoneMerge = row.get('pbi_done_merge');
+		   var pbiDoneValidationPO = row.get('pbi_done_validation_po');
+		   var pbiDeployable = row.get('pbi_deployable');
+		   var pbiDeployed = row.get('pbi_deployed');
 		   var editPbiWindow = Ext.widget('editPbi');
-		   editPbiWindow.displayWindow(pbiId, pbiDescr);
+		   editPbiWindow.displayWindow(pbiId, pbiDescr, pbiDocumentation, pbiDoneMerge, pbiDoneValidationPO, pbiDeployable, pbiDeployed);
 		}
 	}
 });

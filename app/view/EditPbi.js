@@ -15,13 +15,13 @@ Ext.define('PBI.view.EditPbi', {
 		{
 			text: 'Confirm',
 			iconCls: 'confirm',
-			id: 'confirmBtn'
+			id: 'confirmEditBtn'
 		},
 		{ xtype: 'tbseparator' },
 		{
 			text: 'Reset All',
 			iconCls: 'reset',
-			id: 'resetBtn'
+			id: 'resetEditBtn'
 		}]
 	},
 	items: [
@@ -30,6 +30,41 @@ Ext.define('PBI.view.EditPbi', {
 		fieldLabel: 'PBI Description',
 		id: 'pbiDescr',
 		allowBlank: false
+	},
+	{
+		xtype: 'panel',
+		layout: 'vbox',
+		items: [
+		{
+			xtype: 'checkboxfield',
+	        boxLabel  : 'Documentation',
+	        inputValue: '1',
+	        id        : 'doneDocumentation'
+    	},
+    	{
+			xtype: 'checkboxfield',
+	        boxLabel  : 'Merged',
+	        inputValue: '1',
+	        id        : 'doneMerge'
+    	},
+    	{
+			xtype: 'checkboxfield',
+	        boxLabel  : 'PO Validated',
+	        inputValue: '1',
+	        id        : 'donePOValidation'
+    	},
+    	{
+			xtype: 'checkboxfield',
+	        boxLabel  : 'Deployable',
+	        inputValue: '1',
+	        id        : 'doneDeployable'
+    	},
+    	{
+			xtype: 'checkboxfield',
+	        boxLabel  : 'Deployed',
+	        inputValue: '1',
+	        id        : 'doneDeployed'
+    	}]
 	}],
 
 	initComponent: function() {
@@ -45,9 +80,14 @@ Ext.define('PBI.view.EditPbi', {
 		this.callParent();
 	},
 
-	displayWindow: function(pbiId, pbiDescr) {
+	displayWindow: function(pbiId, pbiDescr, pbiDocumentation, pbiDoneMerge, pbiDoneValidationPO, pbiDeployable, pbiDeployed) {
 		this.title = "Edit PBI :: " + pbiId;
 		Ext.getCmp('pbiDescr').setValue(pbiDescr);
+		Ext.getCmp('doneDocumentation').setValue(pbiDocumentation);
+		Ext.getCmp('doneMerge').setValue(pbiDoneMerge);
+		Ext.getCmp('donePOValidation').setValue(pbiDoneValidationPO);
+		Ext.getCmp('doneDeployable').setValue(pbiDeployable);
+		Ext.getCmp('doneDeployed').setValue(pbiDeployed);
 		this.show();
 	}
 });
