@@ -104,6 +104,15 @@ Ext.define('PBI.controller.Controller', {
 	}, 
 
 	updatePbi: function() {
-		
+		if (Ext.getCmp('pbiEditDescr').isValid()) {
+			var pbiDescr = Ext.getCmp('pbiEditDescr').getValue();
+			var pbiDocumentation = Ext.getCmp('doneDocumentation').getValue();
+			var pbiDoneMerge = Ext.getCmp('doneMerge').getValue();
+			var pbiDoneValidationPO = Ext.getCmp('donePOValidation').getValue();
+			var pbiDeployable = Ext.getCmp('doneDeployable').getValue();
+			var pbiDeployed = Ext.getCmp('doneDeployed').getValue();
+		} else {
+			Ext.Msg.alert('Error', 'PBI description is void');
+		}
 	}
 });
