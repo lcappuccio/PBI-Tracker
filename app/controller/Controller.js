@@ -20,7 +20,7 @@ Ext.define('PBI.controller.Controller', {
 				click: this.debugConsole
 			},
 			'pbiToolbar > button[id="refreshBtn"]': {
-				click: this.debugConsole
+				click: this.refreshList
 			},
 			'createPbi > toolbar[id="createPbiToolbar"] > button[id="confirmBtn"]': {
 				click: this.insertPbi
@@ -64,11 +64,16 @@ Ext.define('PBI.controller.Controller', {
                     }
                 }
 			});
+			Ext.getCmp('pbiList').reloadAll();
 		}
 	},
 
 	resetPbi: function() {
 		Ext.getCmp('pbiId').reset();
 		Ext.getCmp('pbiDescr').reset();
+	},
+
+	refreshList: function() {
+		Ext.getCmp('pbiList').reloadAll();
 	}
 });
