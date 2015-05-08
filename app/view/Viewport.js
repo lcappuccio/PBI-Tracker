@@ -68,7 +68,8 @@ Ext.define('PBI.view.Viewport',{
 		});
 
 		this.items = {
-		layout: 'border',
+		layout: 'fit',
+		title: 'PBI Tracker Tool',
 		border: false,
 		dockedItems: [
 			{
@@ -90,14 +91,6 @@ Ext.define('PBI.view.Viewport',{
 			}],
 		items: [
 		{
-			region: 'north',
-			height: 30,
-			collapsible: false,
-			bodyStyle: 'background-color: #224477;',
-			html: '<div class="mainTitle">&nbsp&nbspPBI Tracker Tool</div>'
-		},
-		{
-			region: 'center',
 			id: 'mainApplication',
 			items: [
 				centerPanel
