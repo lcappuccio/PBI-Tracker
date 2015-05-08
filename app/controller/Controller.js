@@ -1,3 +1,11 @@
+function booleanToInt(booleanValue) {
+	if (booleanValue == true) {
+		return 1
+	} else {
+		return 0;
+	}
+}
+
 Ext.define('PBI.controller.Controller', {
 	extend: 'Ext.app.Controller',
 	stores: [
@@ -105,12 +113,44 @@ Ext.define('PBI.controller.Controller', {
 
 	updatePbi: function() {
 		if (Ext.getCmp('pbiEditDescr').isValid()) {
+			var pbiId;
+			var pbiGrid = Ext.getCmp('pbiList');
+			if (pbiGrid.getSelectionModel().hasSelection()) {
+			   var row = pbiGrid.getSelectionModel().getSelection()[0];
+			   pbiId = row.get('pbi_id');
+			}
 			var pbiDescr = Ext.getCmp('pbiEditDescr').getValue();
-			var pbiDocumentation = Ext.getCmp('doneDocumentation').getValue();
-			var pbiDoneMerge = Ext.getCmp('doneMerge').getValue();
-			var pbiDoneValidationPO = Ext.getCmp('donePOValidation').getValue();
-			var pbiDeployable = Ext.getCmp('doneDeployable').getValue();
-			var pbiDeployed = Ext.getCmp('doneDeployed').getValue();
+			var pbiDocumentation = booleanToInt(Ext.getCmp('doneDocumentation').getValue());
+			var pbiDoneMerge = booleanToInt(Ext.getCmp('doneMerge').getValue());
+			var pbiDoneValidationPO = booleanToInt(Ext.getCmp('donePOValidation').getValue());
+			var pbiDeployable = booleanToInt(Ext.getCmp('doneDeployable').getValue());
+			var pbiDeployed = booleanToInt(Ext.getCmp('doneDeployed').getValue());
+			Ext.Ajax.request({
+			    url: 'data/pbi_update.php',
+			    method: 'POST',
+			    waitTitle: 'Connecting',
+			    waitMsg: 'Sending data...',
+			    params: {
+			        pbiId: pbiId,
+			        pbiDescr: pbiDescr,
+			        pbiDocumentation: pbiDocumentation,
+			        pbiDoneMerge: pbiDoneMerge,
+			        pbiDoneValidationPO: pbiDoneValidationPO,
+			        pbiDeployable: pbiDeployable,
+			        pbiDeployed: pbiDeployed
+			    },
+		    	success: function(error){
+                    var postResponse = Ext.decode(error.responseText);
+                    if (postResponse.success == "true") { 
+                        Ext.getCmp('editPbi').close();
+                    } else {
+                        Ext.Msg.alert('Error', postResponse.error_code);
+                        Ext.getCmp('pbiId').reset();
+						Ext.getCmp('pbiDescr').reset();
+                    }
+                }
+			});
+			Ext.getCmp('pbiList').reloadAll();
 		} else {
 			Ext.Msg.alert('Error', 'PBI description is void');
 		}
