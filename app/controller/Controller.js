@@ -28,6 +28,9 @@ Ext.define('PBI.controller.Controller', {
 			'createPbi > toolbar[id="createPbiToolbar"] > button[id="resetBtn"]': {
 				click: this.resetPbi
 			},
+			'pbiList': {
+				rowdblclick: this.editPbi
+			}
 		});
 	},
 
@@ -75,5 +78,13 @@ Ext.define('PBI.controller.Controller', {
 
 	refreshList: function() {
 		Ext.getCmp('pbiList').reloadAll();
+	},
+
+	editPbi: function() {
+		var pbiGrid = Ext.getCmp('pbiList');
+		if (pbiGrid.getSelectionModel().hasSelection()) {
+		   var row = pbiGrid.getSelectionModel().getSelection()[0];
+		   console.log(row.get('pbi_id'));
+		}
 	}
 });
