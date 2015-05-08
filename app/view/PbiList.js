@@ -29,7 +29,7 @@ Ext.define('PBI.view.PbiList' ,{
 	alias : 'widget.pbiList',
 	id: 'pbiList',
 	multiSelect: false,
-	title : 'PBI List',
+	title : 'PBI List (double click to edit)',
 	store: 'Pbis',
 	
 	initComponent: function() {
