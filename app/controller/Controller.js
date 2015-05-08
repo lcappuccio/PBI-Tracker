@@ -59,6 +59,7 @@ Ext.define('PBI.controller.Controller', {
 		if (Ext.getCmp('pbiId').isValid() && Ext.getCmp('pbiDescr').isValid()) {
 			var pbiId = Ext.getCmp('pbiId').getValue();
 			var pbiDescr = Ext.getCmp('pbiDescr').getValue();
+			var userName = Ext.getCmp('userLabel').text;
 			Ext.Ajax.request({
 			    url: 'data/pbi_insert.php',
 			    method: 'POST',
@@ -66,7 +67,8 @@ Ext.define('PBI.controller.Controller', {
 			    waitMsg: 'Sending data...',
 			    params: {
 			        pbiId: pbiId,
-			        pbiDescr: pbiDescr
+			        pbiDescr: pbiDescr,
+			        userName: userName
 			    },
 		    	success: function(error){
                     var postResponse = Ext.decode(error.responseText);
@@ -122,6 +124,7 @@ Ext.define('PBI.controller.Controller', {
 			var pbiDoneValidationPO = booleanToInt(Ext.getCmp('donePOValidation').getValue());
 			var pbiDeployable = booleanToInt(Ext.getCmp('doneDeployable').getValue());
 			var pbiDeployed = booleanToInt(Ext.getCmp('doneDeployed').getValue());
+			var userName = Ext.getCmp('userLabel').text;
 			Ext.Ajax.request({
 			    url: 'data/pbi_update.php',
 			    method: 'POST',
@@ -134,7 +137,8 @@ Ext.define('PBI.controller.Controller', {
 			        pbiDoneMerge: pbiDoneMerge,
 			        pbiDoneValidationPO: pbiDoneValidationPO,
 			        pbiDeployable: pbiDeployable,
-			        pbiDeployed: pbiDeployed
+			        pbiDeployed: pbiDeployed,
+			        userName: userName
 			    },
 		    	success: function(error){
                     var postResponse = Ext.decode(error.responseText);
