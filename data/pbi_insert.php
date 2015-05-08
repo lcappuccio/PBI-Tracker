@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$stmt = $conn->prepare("insert into pbi_list (pbi_id,pbi_descr) values (?,?)");
+$stmt = $conn->prepare("insert into pbi_list (pbi_id,pbi_descr,pbi_insert_timestamp) values (?,?,sysdate())");
 $stmt->bind_param('is', $pbi_id, $pbi_descr);
 
 if ($stmt->execute()) {

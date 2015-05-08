@@ -41,7 +41,8 @@ Ext.define('PBI.view.PbiList' ,{
 			{header: 'Merged', dataIndex: 'pbi_done_merge', width: 100, renderer: showIcon},
 			{header: 'PO Validated', dataIndex: 'pbi_done_validation_po', width: 100, renderer: showIcon},
 			{header: 'Deployable', dataIndex: 'pbi_deployable', width: 100, renderer: showIcon},
-			{header: 'Deployed', dataIndex: 'pbi_deployed', width: 100, renderer: showIcon}
+			{header: 'Deployed', dataIndex: 'pbi_deployed', width: 100, renderer: showIcon},
+			{header: 'Added', dataIndex: 'pbi_insert_timestamp', width: 150, renderer: showTimestamp}
 		];		
 		this.callParent(arguments);
 		this.getStore().sort('pbi_id', 'DESC');

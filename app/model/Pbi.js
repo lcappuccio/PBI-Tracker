@@ -7,6 +7,7 @@ Ext.define('PBI.model.Pbi', {
 	    {name: 'pbi_done_merge', type: 'int'},
 	    {name: 'pbi_done_validation_po', type: 'int'},
 	    {name: 'pbi_deployable', type: 'int'},
-	    {name: 'pbi_deployed', type: 'int'}
+	    {name: 'pbi_deployed', type: 'int'},
+	    {name: 'pbi_insert_timestamp', type: 'date'}
     ]
 });
