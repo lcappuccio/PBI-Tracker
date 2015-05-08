@@ -9,7 +9,7 @@ Ext.define('PBI.view.EditPbi', {
 	dockedItems: {
 		xtype: 'toolbar',
 		dock: 'bottom',
-		id: 'createPbiToolbar',
+		id: 'editPbiToolbar',
 		items: [
 		'->', // Fill
 		{
