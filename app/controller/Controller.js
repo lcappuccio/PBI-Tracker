@@ -42,9 +42,6 @@ Ext.define('PBI.controller.Controller', {
 			},
 			'editPbi > toolbar[id="editPbiToolbar"] > button[id="confirmEditBtn"]': {
 				click: this.updatePbi
-			},
-			'editPbi > toolbar[id="editPbiToolbar"] > button[id="resetEditBtn"]': {
-				click: this.debugConsole
 			}
 		});
 	},
