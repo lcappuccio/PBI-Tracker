@@ -70,13 +70,11 @@ Ext.define('PBI.view.Viewport',{
 		this.items = {
 		layout: 'fit',
 		title: 'PBI Tracker Tool',
-		border: false,
 		dockedItems: [
 			{
 				xtype: 'toolbar',
 				id: 'logoutToolbar',
 				dock: 'bottom',
-				border: false,
 				items: [
 				'->', // Fill
 				{

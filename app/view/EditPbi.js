@@ -16,12 +16,6 @@ Ext.define('PBI.view.EditPbi', {
 			text: 'Confirm',
 			iconCls: 'confirm',
 			id: 'confirmEditBtn'
-		},
-		{ xtype: 'tbseparator' },
-		{
-			text: 'Reset All',
-			iconCls: 'reset',
-			id: 'resetEditBtn'
 		}]
 	},
 	items: [
