@@ -107,6 +107,8 @@ Ext.define('PBI.controller.Controller', {
 		   var pbiDeployed = row.get('pbi_deployed');
 		   var editPbiWindow = Ext.widget('editPbi');
 		   editPbiWindow.displayWindow(pbiId, pbiDescr, pbiDocumentation, pbiDoneMerge, pbiDoneValidationPO, pbiDeployable, pbiDeployed);
+		} else {
+			Ext.Msg.alert('Error', 'Make a selection');
 		}
 	}, 
 
