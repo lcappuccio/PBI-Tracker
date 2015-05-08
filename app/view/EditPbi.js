@@ -28,7 +28,7 @@ Ext.define('PBI.view.EditPbi', {
 	{
 		xtype: 'textfield',
 		fieldLabel: 'PBI Description',
-		id: 'pbiDescr',
+		id: 'pbiEditDescr',
 		allowBlank: false
 	},
 	{
@@ -82,7 +82,7 @@ Ext.define('PBI.view.EditPbi', {
 
 	displayWindow: function(pbiId, pbiDescr, pbiDocumentation, pbiDoneMerge, pbiDoneValidationPO, pbiDeployable, pbiDeployed) {
 		this.title = "Edit PBI :: " + pbiId;
-		Ext.getCmp('pbiDescr').setValue(pbiDescr);
+		Ext.getCmp('pbiEditDescr').setValue(pbiDescr);
 		Ext.getCmp('doneDocumentation').setValue(pbiDocumentation);
 		Ext.getCmp('doneMerge').setValue(pbiDoneMerge);
 		Ext.getCmp('donePOValidation').setValue(pbiDoneValidationPO);
