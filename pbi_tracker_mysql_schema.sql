@@ -25,7 +25,7 @@ CREATE TABLE `pbi_list`  (
 GO
 CREATE TABLE `pbi_updates`  ( 
 	`pbi_id`         	int(11) NOT NULL,
-	`user_id`        	int(11) NOT NULL,
+	`user_name`        	varchar(100) NOT NULL,
 	`pbi_update_date`	date NOT NULL 
 	)
 GO
