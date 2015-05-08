@@ -42,6 +42,7 @@ Ext.define('PBI.view.Viewport',{
 					formBind: true,
 					handler: function() {
 						if (Ext.getCmp('userList').isValid()) {
+							Ext.getCmp('userLabel').setText(Ext.getCmp('userList').getRawValue());
 							Ext.getCmp('loginWindow').destroy();
 						}
 					}
@@ -77,6 +78,15 @@ Ext.define('PBI.view.Viewport',{
 				dock: 'bottom',
 				items: [
 				'->', // Fill
+				{
+					xtype: 'label',
+					text: 'Logged as:'
+				},
+				{
+					xtype: 'label',
+					id: 'userLabel',
+					text: 'user_undefined'
+				},
 				{
 					text: 'Logout',
 					iconCls: 'login',
