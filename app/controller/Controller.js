@@ -33,7 +33,7 @@ Ext.define('PBI.controller.Controller', {
 				rowdblclick: this.editPbi
 			},
 			'editPbi > toolbar[id="editPbiToolbar"] > button[id="confirmEditBtn"]': {
-				click: this.debugConsole
+				click: this.updatePbi
 			},
 			'editPbi > toolbar[id="editPbiToolbar"] > button[id="resetEditBtn"]': {
 				click: this.debugConsole
@@ -101,5 +101,9 @@ Ext.define('PBI.controller.Controller', {
 		   var editPbiWindow = Ext.widget('editPbi');
 		   editPbiWindow.displayWindow(pbiId, pbiDescr, pbiDocumentation, pbiDoneMerge, pbiDoneValidationPO, pbiDeployable, pbiDeployed);
 		}
+	}, 
+
+	updatePbi: function() {
+		
 	}
 });
