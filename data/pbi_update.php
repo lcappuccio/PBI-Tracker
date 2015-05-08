@@ -22,7 +22,7 @@ $stmt_update_pbi = $conn->prepare("update pbi_list set pbi_descr = ?, pbi_done_d
 $stmt_update_pbi->bind_param('siiiiii', $pbi_descr, $pbi_done_documentation, $pbi_done_merge, $pbi_done_validation_po, $pbi_deployable, $pbi_deployed, $pbi_id);
 
 $stmt_log_update = $conn->prepare("insert into pbi_updates (pbi_id,user_name,pbi_update_date) values (?,?,sysdate())");
-$stmt_log_update->bind_param('is', $pbi_id, $pbi_descr);
+$stmt_log_update->bind_param('is', $pbi_id, $user_name);
 
 if ($stmt_update_pbi->execute() && $stmt_log_update->execute()) {
     echo '{"success":"true"}';
