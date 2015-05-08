@@ -38,31 +38,26 @@ Ext.define('PBI.view.EditPbi', {
 		{
 			xtype: 'checkboxfield',
 	        boxLabel  : 'Documentation',
-	        inputValue: '1',
 	        id        : 'doneDocumentation'
     	},
     	{
 			xtype: 'checkboxfield',
 	        boxLabel  : 'Merged',
-	        inputValue: '1',
 	        id        : 'doneMerge'
     	},
     	{
 			xtype: 'checkboxfield',
 	        boxLabel  : 'PO Validated',
-	        inputValue: '1',
 	        id        : 'donePOValidation'
     	},
     	{
 			xtype: 'checkboxfield',
 	        boxLabel  : 'Deployable',
-	        inputValue: '1',
 	        id        : 'doneDeployable'
     	},
     	{
 			xtype: 'checkboxfield',
 	        boxLabel  : 'Deployed',
-	        inputValue: '1',
 	        id        : 'doneDeployed'
     	}]
 	}],
