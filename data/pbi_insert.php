@@ -17,7 +17,7 @@ $stmt_insert_pbi = $conn->prepare("insert into pbi_list (pbi_id,pbi_descr,pbi_in
 $stmt_insert_pbi->bind_param('is', $pbi_id, $pbi_descr);
 
 $stmt_update_pbi = $conn->prepare("insert into pbi_updates (pbi_id,user_name,pbi_update_date) values (?,?,sysdate())");
-$stmt_update_pbi->bind_param('is', $pbi_id, $pbi_descr);
+$stmt_update_pbi->bind_param('is', $pbi_id, $user_name);
 
 if ($stmt_insert_pbi->execute() && $stmt_update_pbi->execute()) {
     echo '{"success":"true"}';
