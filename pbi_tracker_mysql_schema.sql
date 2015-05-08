@@ -19,6 +19,7 @@ CREATE TABLE `pbi_list`  (
 	`pbi_done_validation_po`	int(11) NULL,
 	`pbi_deployable`        	int(11) NULL,
 	`pbi_deployed`          	int(11) NULL,
+	`pbi_insert_timestamp`  	datetime NOT NULL,
 	PRIMARY KEY(`pbi_id`)
 )
 GO
