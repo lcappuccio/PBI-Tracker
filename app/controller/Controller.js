@@ -5,7 +5,8 @@ Ext.define('PBI.controller.Controller', {
 	],
 	views: [
 		'PbiToolbar',
-		'CreatePbi'
+		'CreatePbi',
+		'EditPbi'
 	],
 
 	init: function() {
@@ -84,7 +85,10 @@ Ext.define('PBI.controller.Controller', {
 		var pbiGrid = Ext.getCmp('pbiList');
 		if (pbiGrid.getSelectionModel().hasSelection()) {
 		   var row = pbiGrid.getSelectionModel().getSelection()[0];
-		   console.log(row.get('pbi_id'));
+		   var pbiId = row.get('pbi_id');
+		   var pbiDescr = row.get('pbi_descr');
+		   var editPbiWindow = Ext.widget('editPbi');
+		   editPbiWindow.displayWindow(pbiId, pbiDescr);
 		}
 	}
 });
