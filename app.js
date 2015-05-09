@@ -5,11 +5,13 @@
 
     models: [
         'User',
-        'Pbi'
+        'Pbi',
+        'PbiUpdate'
     ],
     stores: [
         'Users',
-        'Pbis'
+        'Pbis',
+        'PbiUpdates'
     ],
     controllers: [
         'Controller'
