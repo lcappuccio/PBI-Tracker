@@ -22,7 +22,6 @@ Ext.define('PBI.view.PbiUpdatesGrid' ,{
 	
 	reloadAll: function(pbiId) {
 		myStore = this.getStore();
-		console.log(myStore);
 		myStore.load({
 			params: {
 				pbiId : pbiId
