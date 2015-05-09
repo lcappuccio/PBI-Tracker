@@ -23,6 +23,7 @@ Ext.define('PBI.view.EditPbi', {
 		xtype: 'textfield',
 		fieldLabel: 'PBI Description',
 		id: 'pbiEditDescr',
+		maxLength: 99,
 		allowBlank: false
 	},
 	{
