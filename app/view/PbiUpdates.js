@@ -3,9 +3,10 @@ Ext.define('PBI.view.PbiUpdates', {
 	alias: 'widget.pbiUpdates',
 	id: 'pbiUpdates',
 	title: 'Edit History',
-	height : 150,
-	width: 250,
+	height : 200,
+	width: 280,
 	resizable: false,
+	autoScroll: true,
 	items: [
 	{
 		xtype: 'pbiUpdatesGrid'
