@@ -8,3 +8,7 @@ PBI Tracker Tool - A tool to keep track of Product Backlog Items
 
 ## Usage
 1. Populate the user table with the users that'll use the tool
+
+## FAQ
+1. PHP Error: Call to undefined method mysqli_stmt::get_result() in /var/www/html/pbi_tracker/data/pbi_updates.php on line 17
+  * Install mysqlnd driver (sudo apt-get install php5-mysqlnd) and restart apache

@@ -9,12 +9,15 @@ function booleanToInt(booleanValue) {
 Ext.define('PBI.controller.Controller', {
 	extend: 'Ext.app.Controller',
 	stores: [
-		'Pbis'
+		'Pbis',
+		'PbiUpdates'
 	],
 	views: [
 		'PbiToolbar',
 		'CreatePbi',
-		'EditPbi'
+		'EditPbi',
+		'PbiUpdates',
+		'PbiUpdatesGrid'
 	],
 
 	init: function() {
@@ -26,7 +29,7 @@ Ext.define('PBI.controller.Controller', {
 				click: this.editPbi
 			},
 			'pbiToolbar > button[id="histBtn"]': {
-				click: this.debugConsole
+				click: this.viewPbiUpdates
 			},
 			'pbiToolbar > button[id="refreshBtn"]': {
 				click: this.refreshList
@@ -157,5 +160,18 @@ Ext.define('PBI.controller.Controller', {
 		} else {
 			Ext.Msg.alert('Error', 'PBI description is void');
 		}
+	},
+
+	viewPbiUpdates: function() {
+		var pbiId;
+		var pbiGrid = Ext.getCmp('pbiList');
+		if (pbiGrid.getSelectionModel().hasSelection()) {
+		   var row = pbiGrid.getSelectionModel().getSelection()[0];
+		   pbiId = row.get('pbi_id');
+		   var pbiUpdatesWindow = Ext.widget('pbiUpdates');
+		   pbiUpdatesWindow.displayWindow(pbiId);
+		} else {
+			Ext.Msg.alert('Error', 'Make a selection');
+        }
 	}
 });
