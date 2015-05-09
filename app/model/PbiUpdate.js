@@ -1,4 +1,4 @@
-Ext.define('PBI.model.PbiUpdates', {
+Ext.define('PBI.model.PbiUpdate', {
     extend: 'Ext.data.Model',
     fields: [
 	    {name: 'pbi_id', type: 'int'},
