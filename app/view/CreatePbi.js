@@ -36,6 +36,7 @@ Ext.define('PBI.view.CreatePbi', {
 		xtype: 'textfield',
 		fieldLabel: 'PBI Description',
 		id: 'pbiDescr',
+		maxLength: 99,
 		allowBlank: false
 	}],
 
