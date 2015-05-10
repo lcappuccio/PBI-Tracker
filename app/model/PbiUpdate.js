@@ -3,6 +3,6 @@ Ext.define('PBI.model.PbiUpdate', {
     fields: [
 	    {name: 'pbi_id', type: 'int'},
 	    {name: 'user_name', type: 'string'},
-	    {name: 'pbi_update_date', type: 'date'}
+	    {name: 'pbi_update_date', type: 'date', dateFormat: 'd/m/Y H:i'}
     ]
 });
