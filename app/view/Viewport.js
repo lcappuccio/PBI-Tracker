@@ -42,8 +42,25 @@ Ext.define('PBI.view.Viewport',{
 					formBind: true,
 					handler: function() {
 						if (Ext.getCmp('userList').isValid()) {
-							Ext.getCmp('userLabel').setText(Ext.getCmp('userList').getRawValue());
-							Ext.getCmp('loginWindow').destroy();
+							userName = Ext.getCmp('userList').getRawValue();
+							Ext.Ajax.request({
+							    url: 'data/user_list_update_last_login.php',
+							    method: 'POST',
+							    waitTitle: 'Connecting',
+							    waitMsg: 'Sending data...',
+							    params: {
+							    	userName: userName
+							    },
+						    	success: function(error){
+				                    var postResponse = Ext.decode(error.responseText);
+				                    if (postResponse.success == "true") { 
+				                        Ext.getCmp('userLabel').setText(userName);
+										Ext.getCmp('loginWindow').destroy();
+				                    } else {
+				                        Ext.Msg.alert('Error', postResponse.error_code);
+				                    }
+				                }
+							});
 						}
 					}
 				}],
