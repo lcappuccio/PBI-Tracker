@@ -29,11 +29,12 @@ CREATE TABLE `pbi_updates`  (
 	`pbi_update_date`	datetime NOT NULL
 	)
 GO
-CREATE TABLE `pbi_user`  ( 
+CREATE TABLE pbi_user  ( 
 	`user_id`    	int(11) NOT NULL,
 	`user_name`  	varchar(100) NOT NULL,
 	`user_active`	int(11) NOT NULL,
-	PRIMARY KEY(`user_id`)
+	`last_login` 	datetime NULL,
+	PRIMARY KEY(user_id)
 )
 GO
 
