@@ -15,7 +15,7 @@ Ext.define('PBI.view.PbiUpdatesGrid' ,{
 	initComponent: function() {
 		this.columns = [
 			{header: 'Username',  dataIndex: 'user_name'},
-			{header: 'Date', dataIndex: 'pbi_update_date', width: 150, renderer: showTimestamp}
+			{header: 'Date', dataIndex: 'pbi_update_date', width: 150}
 		];		
 		this.callParent(arguments);
 	},

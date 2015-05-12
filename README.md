@@ -1,5 +1,6 @@
 # PBI-Tracker
 PBI Tracker Tool - A tool to keep track of Product Backlog Items
+version 1.0
 
 ## Installation
 1. Run the SQL script on your database

@@ -5,7 +5,7 @@ Ext.define('PBI.store.Users', {
 
 	proxy: {
 		type: 'ajax',
-		url: 'data/userlist.php',
+		url: 'data/user_list.php',
 		reader: {
 			type: 'json',
 			root: 'records',
